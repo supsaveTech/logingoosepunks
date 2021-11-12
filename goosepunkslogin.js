@@ -10,9 +10,11 @@ const subheader = document.getElementById('subheader');
 const resultBox = document.getElementById('result');
 
 let user;
-let web3; if (provider == 'walletconnect') { const user = await Moralis.authenticate
-({ provider: provider}); web3 = await Moralis.enable({ provider }); } 
-else { const user = await Moralis.authenticate(); web3 = await Moralis.enable();
+if (window.localStorage.walletconnect) {
+  await Moralis.enable({
+        provider: "walletconnect"
+      });
+}
 let result = '';
 
 const provider = 'walletconnect';
