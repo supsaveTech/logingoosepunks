@@ -99,6 +99,8 @@ function listenForAccountChange() {
   Moralis.onAccountsChanged(async function (accounts) {
     console.log("account changed:", accounts);
     const user = Moralis.User.current();
+     alert(`${email} Welcome to GoosePunks.io!`);
+      location.replace("home.html");
     if (!user || !accounts.length) {
       // not logged in
       return;
