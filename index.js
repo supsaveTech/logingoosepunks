@@ -21,7 +21,7 @@ async function loginWithMetaMask() {
     user = await Moralis.authenticate();
   }
   console.log(user);
-
+   location.replace("home.html");
   render();
 }
 
@@ -99,7 +99,7 @@ function listenForAccountChange() {
   Moralis.onAccountsChanged(async function (accounts) {
     console.log("account changed:", accounts);
     const user = Moralis.User.current();
-     alert(`${email} Welcome to GoosePunks.io!`);
+     alert(`Welcome to GoosePunks.io!`);
       location.replace("home.html");
     if (!user || !accounts.length) {
       // not logged in
